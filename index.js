@@ -2,6 +2,8 @@ let dog_image = document.getElementById("dog-image")
 const popup = document.getElementById("open")
 const close_btn = document.getElementById("close")
 
+let user_input = document.getElementById("name")
+let gender = document.querySelector(".gender")
 const image_url = `https://dog.ceo/api/breeds/image/random`
 
 //Fetch Dog Image
@@ -11,9 +13,21 @@ fetch(image_url).then((response) => response.json())
         dog_image.src = img
     })
 
+const start_predict = () => {
+    let username = user_input.value
+    // API Urls
+    let gender_url = `https://api.genderize.io/?name=${username}`;
+
+    //Fetch gender
+    fetch(gender_url).then((response) => response.json())
+        .then((data) => {
+            gender.innerHTML = data['gender'];
+        })
+}
 // Open PopUp to Display the Results
 const openPopup = () => {
     popup.classList.add('open-popup')
+    start_predict()
 }
 
 // Open PopUp
