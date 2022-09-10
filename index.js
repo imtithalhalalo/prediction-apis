@@ -5,6 +5,8 @@ const close_btn = document.getElementById("close")
 let user_input = document.getElementById("name")
 let gender = document.querySelector(".gender")
 let age = document.querySelector(".age")
+let nationality = document.querySelector(".nationality")
+
 const image_url = `https://dog.ceo/api/breeds/image/random`
 
 //Fetch Dog Image
@@ -19,6 +21,7 @@ const start_predict = () => {
     // API Urls
     let gender_url = `https://api.genderize.io/?name=${username}`;
     let age_url = `https://api.agify.io/?name=${username}`;
+    let nationality_url = `https://api.nationalize.io/?name=${username}`;
 
     //Fetch gender
     fetch(gender_url).then((response) => response.json())
@@ -29,6 +32,15 @@ const start_predict = () => {
     fetch(age_url).then((response) => response.json())
         .then((data) => {
             age.innerHTML = data['age']
+        })
+    //Fetch nationalities
+    countries = ''
+    fetch(nationality_url).then((response) => response.json())
+        .then((data) => {
+            data['country'].forEach(country => {
+                countries += country['country_id'] + ' '
+            });
+            nationality.innerHTML = countries
         })
 }
 // Open PopUp to Display the Results
