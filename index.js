@@ -4,6 +4,7 @@ const close_btn = document.getElementById("close")
 
 let user_input = document.getElementById("name")
 let gender = document.querySelector(".gender")
+let age = document.querySelector(".age")
 const image_url = `https://dog.ceo/api/breeds/image/random`
 
 //Fetch Dog Image
@@ -22,6 +23,11 @@ const start_predict = () => {
     fetch(gender_url).then((response) => response.json())
         .then((data) => {
             gender.innerHTML = data['gender'];
+        })
+    //Fetch age
+    fetch(age_url).then((response) => response.json())
+        .then((data) => {
+            age.innerHTML = data['age']
         })
 }
 // Open PopUp to Display the Results
