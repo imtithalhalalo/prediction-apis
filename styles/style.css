@@ -10,14 +10,70 @@
   display: flex;
   flex-direction: row;
 }
-
-.mt-1 {
-    margin-top: 1em;
+/* Poster */
+.poster {
+  width: 50%;
+  padding: 150px 0;
 }
+
+.dog-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
+  border-radius: 15px;
+}
+
+/* Start Prediction */
+.prediction {
+  margin: 0 12px;
+  padding: 24px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.result p {
+  font-size: 1.2rem;
+}
+.entry h1 {
+  margin-top: 45px;
+  font-size: 74px;
+  margin-left: 8px;
+}
+
+.prediction input {
+  font-size: 1em;
+  padding: 13px 75px;
+  border-radius: 50px;
+  border: 2px solid #61764b;
+  outline: none;
+  color: #383a36;
+}
+
+.prediction button {
+  padding: 13px 150px;
+}
+
+
 /* Colors */
 .sage-green {
   color: #61764b;
 }
 .neutral-pink {
   background-color: #f4eeed;
+}
+
+/* Utilities */
+.btn {
+  font-size: 1em;
+  background-color: #61764b;
+  color: #fff;
+  border: 0;
+  border-radius: 50px;
+}
+
+.mt-1 {
+  margin-top: 1em;
 }
