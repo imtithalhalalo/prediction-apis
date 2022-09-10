@@ -18,6 +18,7 @@ const start_predict = () => {
     let username = user_input.value
     // API Urls
     let gender_url = `https://api.genderize.io/?name=${username}`;
+    let age_url = `https://api.agify.io/?name=${username}`;
 
     //Fetch gender
     fetch(gender_url).then((response) => response.json())
