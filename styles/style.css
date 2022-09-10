@@ -1,0 +1,23 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.mt-1 {
+    margin-top: 1em;
+}
+/* Colors */
+.sage-green {
+  color: #61764b;
+}
+.neutral-pink {
+  background-color: #f4eeed;
+}
